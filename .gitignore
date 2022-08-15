@@ -1,13 +1,11 @@
-<<<<<<< HEAD
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-=======
 /target/
-!.mvn/wrapper/maven-wrapper.jar
->>>>>>> 05aefe11881acba3b342c940feb379ded631205f
+
 
 ### STS ###
 .apt_generated
@@ -18,8 +16,7 @@ target/
 .springBeans
 .sts4-cache
 
-<<<<<<< HEAD
-=======
+
 
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
@@ -189,8 +186,7 @@ build/
 
 ### VS Code ###
 .vscode/
-<<<<<<< HEAD
-=======
+
 
 ### Some additional ignores (sort later)
 *.DS_Store
@@ -212,4 +208,3 @@ README.html
 *.iml
 .idea
 .exercism
->>>>>>> 05aefe11881acba3b342c940feb379ded631205f
