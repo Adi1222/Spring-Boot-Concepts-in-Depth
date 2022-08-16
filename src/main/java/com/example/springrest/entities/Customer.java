@@ -22,7 +22,7 @@ public class Customer {
     private String address;
 
     @OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "cp_fk", referencedColumnName = "cid")
+    @JoinColumn(name = "cp_fk", referencedColumnName = "cid") // here the catch is --> one product belongs to only one customer
     private List<Product> products; // One customer can buy many products
 
 }
