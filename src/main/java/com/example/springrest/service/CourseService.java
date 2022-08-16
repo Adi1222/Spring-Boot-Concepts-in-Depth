@@ -15,4 +15,6 @@ public interface CourseService {
 
     public Course update(Map<String, Object> updates, long id);
 
+    public void deleteCourse(long courseId);
+
 }

@@ -50,6 +50,20 @@ public class MyController {
         return this.courseService.update(updates, Long.parseLong(id));
     }
 
+    @DeleteMapping("/courses/{courseId}")
+    public ResponseEntity<String> deleteCourse(@PathVariable String courseId)
+    {
+        try
+        {
+            this.courseService.deleteCourse(Long.parseLong(courseId));
+            return new ResponseEntity<>("Deleted successfully", HttpStatus.OK);
+        }
+        catch (Exception e) {
+            return new ResponseEntity<>(e.toString(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
     @GetMapping("/hello")
     ResponseEntity<String> hello()
     {

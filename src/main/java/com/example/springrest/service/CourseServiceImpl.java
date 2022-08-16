@@ -76,4 +76,10 @@ public class CourseServiceImpl implements CourseService{
         return finalCourse;
     }
 
+    @Override
+    public void deleteCourse(long courseId)
+    {
+        return;
+    }
+
 }
