@@ -1,7 +1,14 @@
 package com.example.springrest.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "course")
 public class Course {
 
+    @Id
     private long id;
     private String name;
     private String description;

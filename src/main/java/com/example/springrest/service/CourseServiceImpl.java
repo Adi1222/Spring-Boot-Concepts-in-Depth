@@ -1,6 +1,8 @@
 package com.example.springrest.service;
 
+import com.example.springrest.dao.CourseDao;
 import com.example.springrest.entities.Course;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,27 +12,29 @@ import java.util.Map;
 @Service
 public class CourseServiceImpl implements CourseService{
 
-    List<Course> list;
+    //List<Course> list;
 
+    @Autowired
+    private CourseDao courseDao;
 
     public CourseServiceImpl()
     {
-        this.list = new ArrayList<>();
+        //this.list = new ArrayList<>();
 
-        list.add(new Course(1, "Java", "Learn Java"));
-        list.add(new Course(2, "Spring Boot", "Learn Spring Boot"));
+        //list.add(new Course(1, "Java", "Learn Java"));
+        //list.add(new Course(2, "Spring Boot", "Learn Spring Boot"));
     }
 
     @Override
     public List<Course> getCourses() {
 
-        return list;
+        return courseDao.findAll();
     }
     
     @Override
     public Course getCourse(long cId)
     {
-        Course course = null;
+        /*Course course = null;
 
         for(Course  c : list)
         {
@@ -38,16 +42,17 @@ public class CourseServiceImpl implements CourseService{
                 course = c;
                 break;
             }
-        }
-        
-        return course;
+        }*/
+
+        return courseDao.getOne(cId);
     }
 
 
     @Override
     public Course addCourse(Course course)
     {
-        this.list.add(course);
+        //this.list.add(course);
+        courseDao.save(course);
         return course;
     }
 
@@ -55,7 +60,7 @@ public class CourseServiceImpl implements CourseService{
     @Override
     public Course update(Map<String, Object> updates, long id)
     {
-        Course course = null;
+        /*Course course = null;
 
         for(Course  c : list)
         {
@@ -71,15 +76,16 @@ public class CourseServiceImpl implements CourseService{
             if (key.equals("name")) {
                 finalCourse.setName((String) value);
             }
-        });
+        });*/
 
-        return finalCourse;
+        return courseDao.getOne(id);
     }
 
     @Override
     public void deleteCourse(long courseId)
     {
-        return;
+        Course c = courseDao.getOne(courseId);
+        courseDao.delete(c);
     }
 
 }
