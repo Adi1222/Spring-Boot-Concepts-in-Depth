@@ -22,7 +22,7 @@ public class Sport {
 
     /*
     *   This is for having bi-directional mapping
-    *    mappedby ---> look for sport in Sport Class (Entity)  mapping is done in that class
+    *    mappedby ---> look for sport in Student Class (Entity)  mapping is done in that class
     *    Cascade = CascadeType.All   ---> which means if sport is deleted than associated student will also get deleted
     * */
     //@OneToOne(mappedBy = "sport", cascade = CascadeType.ALL)   \
