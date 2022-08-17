@@ -21,6 +21,23 @@ Once the application runs you should see something like this:
 2022-08-17 16:43:22.509  INFO 13028 --- [           main] c.e.springrest.SpringrestApplication     : Started SpringrestApplication in 8.402 seconds (JVM running for 9.472)
 ```
 
+### Features
+
+- [x] CRUD 
+- [x] One To One Relational mapping
+- [x] One To Many Relational Mapping
+- [x] Many To Many Relational Mapping
+- [x] Java8 Optional 
+- [x] Mapping resultset to custom dta 
+- Use of different Annotations
+   - [x] @OneToOne
+   - [x] @OneToMany
+   - [x] @ManyToMany
+   - [x] @JoinColumn
+   - [x] @JoinTable
+   - [x] @Query
+   - [x] @PersistenceContext
+   - [x] @Transactional
 
 
 
