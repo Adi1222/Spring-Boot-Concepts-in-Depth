@@ -23,7 +23,7 @@ public class Company {
 
     private String address;
 
-    @OneToMany(mappedBy = "emp", cascade = CascadeType.ALL) // search for emp in Employee class. In Employee class, a new column is created by @JoinColumn
-    private List<Employee> employees;
+    @OneToMany(mappedBy = "worker", cascade = CascadeType.ALL) // search for emp in Employee class. In Employee class, a new column is created by @JoinColumn
+    private List<Worker> workers;
 
 }

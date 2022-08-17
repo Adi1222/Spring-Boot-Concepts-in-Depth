@@ -10,16 +10,16 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Employee {
+public class Worker {
 
     @Id
-    @Column(name = "emp_id")
+    @Column(name = "worker_id")
     int id;
 
-    private String ename;
+    private String wname;
 
     @ManyToOne
-    @JoinColumn(name = "emp_id")
-    private Employee emp;
+    @JoinColumn(name = "company_id")
+    private Worker worker;
 
 }
