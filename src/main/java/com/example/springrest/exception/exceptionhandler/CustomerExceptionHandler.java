@@ -23,7 +23,6 @@ public class CustomerExceptionHandler {
 
     }
 
-
     // Tell Spring that this method is responsible for handling the CustomerAlreadyExistsException
     @ExceptionHandler(value = {CustomerAlreadyExistsException.class})
     public ResponseEntity<Object> handleAlreadyExistsException(CustomerAlreadyExistsException e)
