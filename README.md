@@ -23,13 +23,13 @@ Once the application runs you should see something like this:
 
 ### Features
 
-:white_check_mark: CRUD
-:white_check_mark: One To One Relational mapping
-:white_check_mark: One To Many Relational Mapping
-:white_check_mark: Many To Many Relational Mapping
-:white_check_mark: Java8 Optional
-:white_check_mark: Mapping resultset to custom dta
-:white_check_mark: Exception Handling
+- :white_check_mark: CRUD
+- :white_check_mark: One To One Relational mapping
+- :white_check_mark: One To Many Relational Mapping
+- :white_check_mark: Many To Many Relational Mapping
+- :white_check_mark: Java8 Optional
+- :white_check_mark: Mapping resultset to custom dta
+- :white_check_mark: Exception Handling
  
 - Use of different Annotations
    - [x] @OneToOne
