@@ -1,12 +1,10 @@
 package com.example.springrest.controller;
 
 import com.example.springrest.entities.Customer;
+import com.example.springrest.exception.CustomerAlreadyExistsException;
 import com.example.springrest.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CustomerController {
@@ -19,6 +17,12 @@ public class CustomerController {
     public Customer getCustomerById(@PathVariable("cid") String cid)
     {
         return customerService.getCustomer(Integer.parseInt(cid));
+    }
+
+    @PostMapping("/addCustomer")
+    public Customer addCustomer(@RequestBody Customer customer)
+    {
+        throw  new CustomerAlreadyExistsException("Customer Already Exists");
     }
 
 }
