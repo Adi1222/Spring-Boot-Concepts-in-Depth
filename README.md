@@ -29,6 +29,11 @@ Once the application runs you should see something like this:
 - [x] Many To Many Relational Mapping
 - [x] Java8 Optional 
 - [x] Mapping resultset to custom dta 
+- [x] Exception Handling
+
+:white_check_mark: - emoji checkbox example
+ 
+
 - Use of different Annotations
    - [x] @OneToOne
    - [x] @OneToMany
