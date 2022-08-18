@@ -31,15 +31,15 @@ Once the application runs you should see something like this:
 :white_check_mark: Mapping resultset to custom dta   
 :white_check_mark: Exception Handling  
 
-- Use of different Annotations
-   :heavy_check_mark: @OneToOne
-   :heavy_check_mark: @OneToMany
-   :heavy_check_mark: @ManyToMany
-   :heavy_check_mark: @JoinColumn
-   :heavy_check_mark: @JoinTable
-   :heavy_check_mark: @Query
-   :heavy_check_mark: @PersistenceContext
-   :heavy_check_mark: @Transactional
+- Use of different Annotations    
+   :heavy_check_mark: @OneToOne   
+   :heavy_check_mark: @OneToMany               
+   :heavy_check_mark: @ManyToMany                        
+   :heavy_check_mark: @JoinColumn                           
+   :heavy_check_mark: @JoinTable                        
+   :heavy_check_mark: @Query             
+   :heavy_check_mark: @PersistenceContext              
+   :heavy_check_mark: @Transactional                  
 
 
 
