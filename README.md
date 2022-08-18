@@ -39,7 +39,9 @@ Once the application runs you should see something like this:
    :heavy_check_mark: @JoinTable                        
    :heavy_check_mark: @Query             
    :heavy_check_mark: @PersistenceContext              
-   :heavy_check_mark: @Transactional                  
+   :heavy_check_mark: @Transactional         
+   :heavy_check_mark: @ExceptionHandler              
+   :heavy_check_mark: @ControllerAdvice
 
 
 
