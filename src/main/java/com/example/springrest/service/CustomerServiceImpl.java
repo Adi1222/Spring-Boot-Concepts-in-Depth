@@ -4,8 +4,10 @@ import com.example.springrest.dto.CustomerProductMapping;
 import com.example.springrest.dto.OrderRequest;
 import com.example.springrest.entities.Customer;
 import com.example.springrest.entities.Product;
+import com.example.springrest.exception.NoSuchCustomerExistsException;
 import com.example.springrest.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -51,5 +53,24 @@ public class CustomerServiceImpl implements CustomerService{
         }
 
         return customerRepository.getProductsOfCustomer(cid);
+    }
+
+    @Override
+    public Customer getCustomer(int id)
+    {
+        return customerRepository.findById(id).orElseThrow(
+                () -> new NoSuchCustomerExistsException("No Such customer exists having id = "  + id)
+        );
+
+    }
+
+    @Override
+    public Customer addCustomer(Customer customer) {
+        return null;
+    }
+
+    @Override
+    public Customer updateCustomer(Customer customer) {
+        return null;
     }
 }
