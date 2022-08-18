@@ -32,14 +32,14 @@ Once the application runs you should see something like this:
 :white_check_mark: Exception Handling  
 
 - Use of different Annotations
-   - [x] @OneToOne
-   - [x] @OneToMany
-   - [x] @ManyToMany
-   - [x] @JoinColumn
-   - [x] @JoinTable
-   - [x] @Query
-   - [x] @PersistenceContext
-   - [x] @Transactional
+   - :heavy_check_mark: @OneToOne
+   - :heavy_check_mark: @OneToMany
+   - :heavy_check_mark: @ManyToMany
+   - :heavy_check_mark: @JoinColumn
+   - :heavy_check_mark: @JoinTable
+   - :heavy_check_mark: @Query
+   - :heavy_check_mark: @PersistenceContext
+   - :heavy_check_mark: @Transactional
 
 
 
