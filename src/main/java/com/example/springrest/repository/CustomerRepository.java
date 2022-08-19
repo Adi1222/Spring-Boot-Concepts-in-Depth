@@ -23,4 +23,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("SELECT c.cid from Customer c where name = :cname")
     public int getCustomerId(@Param("cname") String name);
 
+    @Query("SELECT CASE WHEN COUNT(c) > 0 THEN TRUE ELSE FALSE END FROM Customer c where name = :cname")
+    public boolean checkCustomerByName(@Param("cname") String name); // purely for testing purpose
+
 }
