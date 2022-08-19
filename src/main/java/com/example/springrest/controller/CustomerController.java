@@ -6,6 +6,8 @@ import com.example.springrest.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 public class CustomerController {
 
@@ -22,7 +24,14 @@ public class CustomerController {
     @PostMapping("/addCustomer")
     public Customer addCustomer(@RequestBody Customer customer)
     {
-        throw  new CustomerAlreadyExistsException("Customer Already Exists");
+        //throw  new CustomerAlreadyExistsException("Customer Already Exists");
+        try {
+            Customer exp = customerService.addCustomer(customer);
+            return exp;
+        } catch (CustomerAlreadyExistsException e)
+        {
+            throw e;
+        }
     }
 
 }

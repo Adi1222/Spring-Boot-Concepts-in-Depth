@@ -25,4 +25,5 @@ public class Customer {
     @JoinColumn(name = "cp_fk", referencedColumnName = "cid") // here the catch is --> one product belongs to only one customer
     private List<Product> products; // One customer can buy many products
 
+
 }

@@ -4,6 +4,7 @@ import com.example.springrest.dto.CustomerProductMapping;
 import com.example.springrest.dto.OrderRequest;
 import com.example.springrest.entities.Customer;
 import com.example.springrest.entities.Product;
+import com.example.springrest.exception.CustomerAlreadyExistsException;
 import com.example.springrest.exception.NoSuchCustomerExistsException;
 import com.example.springrest.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerServiceImpl implements CustomerService{
@@ -65,8 +67,12 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer addCustomer(Customer customer) {
-        return null;
+    public Customer addCustomer(Customer customer) throws CustomerAlreadyExistsException {
+        Optional<Customer> cusIsPresent = customerRepository.findById(customer.getCid());
+
+        cusIsPresent.orElseThrow(() -> new CustomerAlreadyExistsException("Customer Already Exists"));
+
+        return customer;
     }
 
     @Override
