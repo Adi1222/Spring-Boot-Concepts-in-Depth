@@ -59,6 +59,7 @@ Once the application runs you should see something like this:
    - Lazy Loading.
    - Scalability.
    - HQL (Hibernate Query Language)
+   - Database Independent (Provides in memory database)
 
 ### 2. JPA:
 - JPA stands for Java Persistence API and it is the Java specification that defines how to persist java objects. 
