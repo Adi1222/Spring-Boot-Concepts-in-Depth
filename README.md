@@ -48,7 +48,45 @@ Once the application runs you should see something like this:
 
 ### Quick Guide (Tips):
 
-## 1. Mockito
+## 1. Hibernate vs JPA vs Spring Data JPA
+<hr>
+
+### 1. Hibernate:
+- Hibernate is a ORM framework that maps the relational data to the Java Objects.
+- It also provides configuration options to configure the data store and developers can also write queries with Hibernate (HQL).
+- It provides features like:
+   - Caching.
+   - Lazy Loading.
+   - Scalability.
+   - HQL (Hibernate Query Language)
+
+### 2. JPA:
+- JPA stands for Java Persistence API and it is the Java specification that defines how to persist java objects. 
+- It is considered as a link between an object-oriented model and a relational database system. 
+- Hibernate is the standard implementation of JPA. 
+- JPA cannot be used alone and it always needs an implementation like Hibernate, EclipseLink, iBatis, etc.
+- |      JPA        |     Hibernate    |                     
+  |-----------------|------------------| 
+  |JPA provides JPQL (Java Persistence Query Language).| HQL provided by Hibernate is a superset of it.|
+  |JPA provides EntityManagerFactory interface to create Session instances.| whereas Hibernate provides SessionFactory to create the Session instances.|
+  |For CRUD operations on instances of mapped entity classes, JPA uses EntityManager.|  Hibernate uses the Session interface |
+
+### 3. Spring Data JPA:
+- JPA is a standard for defining the persistence layer and Spring Data JPA is a sub-project under the Spring Framework umbrella which allows Spring applications to integrate with JPA. 
+- Contrary to the popular Myth that it's a JPA implementation like Hibernate, it actually provides another level of abstraction to produce more cleaner code and it always needs a JPA implementation like Hibernate to work with.
+- If you are thinking what is the point of using Spring Data JPA if you have to use Hibernate or Eclipse Link then let me tell you that its a kind of add-on, it makes it easier to write your Data Access Layer and provides clean methods to save and retrieve data from any Database without writing SQL.
+- Spring Data JPA comes with a concept called JPA Repository and Query methods. JPA Repository is nothing a set of interfaces that defines query methods like findByFirstName or findByLastName etc. These methods are converted into low-level SQL queries by Spring.
+- The Spring Data Jpa dependency can be added as below and this will do the data source auto-configuration as well. After adding this, we just need to add a database dependency to make sure it is available in the class path.
+```
+<dependency>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-starter-data-jpa</artifactId>
+<version>{version}</version>
+</dependency>
+```
+## 2. Mockito
+<hr>
+
 - When you use the @SpringBootTest annotation then SpringExtension for Junit5 starts an application context before running your test, and to make mocks in tests you need to use @MockBean annotation instead of @Mock & @InjectMocks
 - If you do not write @SpringBootTest annotation, use @ExtendWith(MockitoExtension.class) annotation and use @Mock annotation to make mocks in tests.
 - @ExtendWith(MockitoExtension.class) annotation opens and closes the mocks for us. We do not have to explicitly open and close them. 
