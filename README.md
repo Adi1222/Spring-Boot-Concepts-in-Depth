@@ -91,3 +91,8 @@ Once the application runs you should see something like this:
 - When you use the @SpringBootTest annotation then SpringExtension for Junit5 starts an application context before running your test, and to make mocks in tests you need to use @MockBean annotation instead of @Mock & @InjectMocks
 - If you do not write @SpringBootTest annotation, use @ExtendWith(MockitoExtension.class) annotation and use @Mock annotation to make mocks in tests.
 - @ExtendWith(MockitoExtension.class) annotation opens and closes the mocks for us. We do not have to explicitly open and close them. 
+
+## 3. Persistence Life Cycle
+<hr>
+
+<img src="src\\main\\resources\\entity lifecycle.png">
