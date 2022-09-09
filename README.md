@@ -95,4 +95,4 @@ Once the application runs you should see something like this:
 ## 3. Persistence Life Cycle
 <hr>
 
-<img src="src\\main\\resources\\entity lifecycle.png">
+<img src="entity lifecycle.png" width="500" height="300">
