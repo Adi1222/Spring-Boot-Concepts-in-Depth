@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@ControllerAdvice
+@ControllerAdvice // global exception handler
 public class CustomerExceptionHandler {
 
     // Tell Spring that this method is responsible for handling the NoSuchCustomerExistsException

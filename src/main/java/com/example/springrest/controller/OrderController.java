@@ -4,6 +4,7 @@ import com.example.springrest.dto.CustomerProductMapping;
 import com.example.springrest.dto.OrderRequest;
 import com.example.springrest.entities.Customer;
 import com.example.springrest.entities.Product;
+import com.example.springrest.exception.NoSuchCustomerExistsException;
 import com.example.springrest.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -38,8 +39,9 @@ public class OrderController {
     }
 
     @GetMapping("/orders/customer")
-    public List<Product> getProducts(@RequestParam(name = "name") String name)
-    {
+    public List<Product> getProducts(@RequestParam(name = "name") String name)  {
+
         return customerService.getProducts(name);
+
     }
 }
