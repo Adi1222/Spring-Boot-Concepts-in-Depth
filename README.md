@@ -96,3 +96,21 @@ Once the application runs you should see something like this:
 <hr>
 
 <img src="entity lifecycle.png" width="500" height="300">
+
+### 1. Transient:
+- The lifecycle state of a newly instantiated entity object is called transient. The entity hasn’t been persisted yet, so it doesn’t represent any database record.
+- The persistence context doesn’t know about your newly instantiate object. As long as your entity object is in the lifecycle state transient, you can think of it as a basic Java object without any connection to the database and any JPA-specific functionality.
+
+### 2. Persistent / Managed:
+- In this state. each object represents one row in the database table. 
+- Therefore, if we make any changes in the data then hibernate will detect these changes and make changes in the database table.
+
+### 3. Detached:
+- An entity gets detached when you close the persistence context. 
+- That typically happens after a request got processed. Then the database transaction gets committed, the persistence context gets closed, and the entity object gets returned to the caller
+- For converting an object from Persistent State to Detached State, we either have to close the session or we have to clear its cache. 
+- As the session is closed here or the cache is cleared, then any changes made to the data will not affect the database table. 
+- Whenever needed, the detached object can be reconnected to a new hibernate session.
+
+### 4. Removed:
+- when the entity object is deleted from the database then the entity object is known to be in the removed state.
