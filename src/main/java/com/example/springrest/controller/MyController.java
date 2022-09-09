@@ -16,9 +16,6 @@ import java.util.Map;
 public class MyController {
 
 
-    @Autowired
-    private UserDAOService userDAOService;
-
     @GetMapping("/home")
     public String Home()
     {
@@ -63,22 +60,4 @@ public class MyController {
         return new ResponseEntity<>("Your age is 22", HttpStatus.OK);
     }
 
-    @PostMapping(path="/users",consumes="application/json")
-    ResponseEntity<HttpStatus> addUser(@RequestBody User user)
-    {
-        long id = userDAOService.addUser(user);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @GetMapping("/users/{uid}")
-    public User getUser(@PathVariable String uid)
-    {
-        return userDAOService.getUser(Long.parseLong(uid));
-    }
-
-    @GetMapping("/users")
-    public List<User> getUsers()
-    {
-        return userDAOService.getUsers();
-    }
 }
