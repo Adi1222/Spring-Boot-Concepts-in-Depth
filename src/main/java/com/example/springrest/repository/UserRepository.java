@@ -11,10 +11,10 @@ import java.util.List;
 @Repository
 public class UserRepository {
 
-    @PersistenceContext
+    @PersistenceContext // within the persistence context, the entity instance amd their lifecycle is managed.
     private EntityManager entityManager;
 
-    @Transactional
+    @Transactional // no need to open and close transaction
     public long insertUser(User user)
     {
         this.entityManager.persist(user);
