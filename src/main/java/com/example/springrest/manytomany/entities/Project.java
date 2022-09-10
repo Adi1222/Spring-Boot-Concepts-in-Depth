@@ -1,5 +1,6 @@
 package com.example.springrest.manytomany.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class Project {
     @Column(name = "proj_name")
     private String pname;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "projects") // You (This class) do not create another table (Project_employee) This is taken care by Employee class (more specifically search projects attribute in Employee class)
     private List<Employee> employees;
 

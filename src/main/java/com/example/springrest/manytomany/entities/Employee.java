@@ -14,11 +14,16 @@ import java.util.List;
 public class Employee {
 
     @Id
+    @GeneratedValue
     @Column(name = "eid")
     int id;
 
     private String ename;
 
+    public Employee(int id, String ename) {
+        this.id = id;
+        this.ename = ename;
+    }
     /*
      *   here, if I do not write @JoinColumn, Employee will create another table employee_project (and that is something we want)
      *   Also, we explicetly want that table's name as "empl_proj" , so @JoinTable(name = "empl_proj") will do the work
