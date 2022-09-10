@@ -10,6 +10,24 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@SqlResultSetMapping(
+        name = "cust_prod_map",
+        classes = {
+                @ConstructorResult(
+                        targetClass = com.example.springrest.dto.CustomerProductMapping.class,
+                        columns = {
+                                @ColumnResult(name = "cn", type = String.class),
+                                @ColumnResult(name = "pn", type = String.class)
+                        }
+                )
+        }
+)
+@NamedNativeQuery(
+        name = "Customer.customer_product_sqlresultsetmapping",
+        query = "SELECT c.name as cn, p.pname as pn from Customer c join product p",
+        resultSetMapping = "cust_prod_map"
+)
+
 @Entity
 public class Customer {
 

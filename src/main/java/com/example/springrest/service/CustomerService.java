@@ -15,6 +15,8 @@ public interface CustomerService {
 
     public List<CustomerProductMapping> getCustomerProducts();
 
+    public List<CustomerProductMapping> getCustomerProductsSqlResultsetMapping();
+
     public List<Product> getProducts(String name);
 
     public Customer getCustomer(int id);

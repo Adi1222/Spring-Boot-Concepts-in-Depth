@@ -79,4 +79,10 @@ public class CustomerServiceImpl implements CustomerService{
     public Customer updateCustomer(Customer customer) {
         return null;
     }
+
+    @Override
+    public List<CustomerProductMapping> getCustomerProductsSqlResultsetMapping()
+    {
+        return customerRepository.customer_product_sqlresultsetmapping();
+    }
 }

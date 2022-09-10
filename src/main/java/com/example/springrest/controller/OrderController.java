@@ -38,6 +38,12 @@ public class OrderController {
         return customerService.getCustomerProducts();
     }
 
+    @GetMapping("/order/customerproducts/sqlresultsetmapping")
+    public List<CustomerProductMapping> getCustomerProductsSqlResultSetMapping()
+    {
+        return customerService.getCustomerProductsSqlResultsetMapping();
+    }
+
     @GetMapping("/orders/customer")
     public List<Product> getProducts(@RequestParam(name = "name") String name)  {
 

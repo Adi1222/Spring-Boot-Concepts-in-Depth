@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NamedNativeQuery;
 import java.util.List;
 
 @Repository
@@ -16,6 +17,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("SELECT new com.example.springrest.dto.CustomerProductMapping(c.name, p.pname) from Customer c join c.products p")
     public List<CustomerProductMapping> getCustomerProducts();
 
+    @Query(nativeQuery = true)
+    public List<CustomerProductMapping> customer_product_sqlresultsetmapping();
 
     @Query(value = "SELECT new com.example.springrest.entities.Product(p.pid, p.pname, p.price, p.qty) from Product p where cp_fk = :cid")
     public List<Product> getProductsOfCustomer(@Param("cid") int cid);
