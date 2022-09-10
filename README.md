@@ -34,7 +34,8 @@ Once the application runs you should see something like this:
 - Use of different Annotations    
    :heavy_check_mark: @OneToOne   
    :heavy_check_mark: @OneToMany               
-   :heavy_check_mark: @ManyToMany                        
+   :heavy_check_mark: @ManyToMany            
+   :heavy_check_mark: @SqlResultSetMapping      
    :heavy_check_mark: @JoinColumn                           
    :heavy_check_mark: @JoinTable                        
    :heavy_check_mark: @Query             
