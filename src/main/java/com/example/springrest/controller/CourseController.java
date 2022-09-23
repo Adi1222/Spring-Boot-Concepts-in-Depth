@@ -2,6 +2,7 @@ package com.example.springrest.controller;
 
 import com.example.springrest.entities.Course;
 import com.example.springrest.entities.User;
+import com.example.springrest.repository.ProductRepository;
 import com.example.springrest.service.CourseService;
 import com.example.springrest.service.UserDAOService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,10 @@ public class CourseController {
 
     @Autowired
     private CourseService courseService;
+
+    @Autowired
+    private ProductRepository productRepository;
+
 
 
     @GetMapping("/courses")

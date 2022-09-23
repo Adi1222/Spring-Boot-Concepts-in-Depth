@@ -30,18 +30,19 @@ import java.util.Arrays;
 import java.util.List;
 
 //@ExtendWith(MockitoExtension.class)
+@AutoConfigureMockMvc
 public class SportsControllerTests {
 
 
-    //private MockMvc mockMvc;
+    private MockMvc mockMvc;
 
 
     @Mock
     private StudentRepository studentRepository;
 
 
-    //@InjectMocks
-    //private SportsController sportsController;
+    @InjectMocks
+    private SportsController sportsController;
 
     Sport s1 = new Sport(1, "Tennis");
     Sport s2 = new Sport(2, "Badminton");
@@ -55,10 +56,29 @@ public class SportsControllerTests {
     void setUp()
     {
         MockitoAnnotations.initMocks(this);
-        //this.mockMvc = MockMvcBuilders.standaloneSetup(SportsController.class).build();
+        this.mockMvc = MockMvcBuilders.standaloneSetup(SportsController.class).build();
 
     }
 
+    @Test
+    public void test_getStudents_MockMVC() throws Exception {
+        List<Student> records = new ArrayList<>(Arrays.asList(RECORD_1, RECORD_2));
+
+
+        Mockito.when(studentRepository.findAll()).thenReturn(records);
+
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/students")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$", hasSize(2)));
+
+        Mockito.verify(studentRepository).findAll();
+
+    }
+
+    @Disabled
     @Test
     public void test_getStudents() throws Exception
     {
